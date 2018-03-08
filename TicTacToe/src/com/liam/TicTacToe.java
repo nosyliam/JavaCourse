@@ -131,5 +131,4 @@ public class TicTacToe {
         Output.append(String.format(" |%s|%s|%s| \n\n", Space, Space, Space));
         System.out.print(Output.toString());
     }
-
 }
