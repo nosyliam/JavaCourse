@@ -18,8 +18,8 @@ public class Board {
      * Clear the game board
      */
     public void ClearBoard() {
-        for (int x = 0; x <= 2; x++) {
-            for (int y = 0; y <= 2; y++) {
+        for (int x = 0; x < 3; x++) {
+            for (int y = 0; y < 3; y++) {
                 Cells[x][y] = CELL_STATE.NONE;
             }
         }
@@ -57,16 +57,16 @@ public class Board {
     /**
      * Makes a choice as an AI. Assumes the AI player is X.
      *
-     * @return: whether the AI won or not
+     * @return: The ID of the cell chosen
      */
-    public boolean ChooseAI() {
+    public int ChooseAI() {
         Random Rand = new Random(new Date().getTime());
         while (true) {
             int x = Rand.nextInt(3);
             int y = Rand.nextInt(3);
             if (Cells[x][y] == CELL_STATE.NONE) {
                 Cells[x][y] = CELL_STATE.X;
-                return CheckWin(x, y, CELL_STATE.X);
+                return (x * 3) + y;
             }
         }
     }
