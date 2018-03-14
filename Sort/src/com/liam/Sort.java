@@ -53,6 +53,7 @@ public class Sort {
                 algorithm = Integer.parseInt(in.nextLine());
                 assert 1 <= algorithm && algorithm <= 4;
                 break;
+            } catch (Exception e) {
                 System.out.print("Invalid selection. Try again > ");
             }
         } while (true);
